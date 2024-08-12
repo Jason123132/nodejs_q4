@@ -13,6 +13,8 @@ const petsFilePath = './pets.json';
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // 确保路径正确
 
+console.log('Views directory:', path.join(__dirname, 'views'));
+
 // 设置静态资源目录
 app.use(express.static(path.join(__dirname, 'public')));
 
