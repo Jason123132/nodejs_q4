@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-app.set('views', path.join(__dirname, 'path_to_your_views_directory'));
+
 const fs = require('fs');
 
 const app = express();
@@ -12,7 +12,7 @@ const petsFilePath = './pets.json';
 
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 function getPets() {
     let pets = [];
@@ -145,8 +145,6 @@ app.get('/have-pet', (req, res) => {
     const username = req.query.username; 
     res.render('have_pet', { username });
 });
-
-
 
 
 const PORT = process.env.PORT || 8007;
