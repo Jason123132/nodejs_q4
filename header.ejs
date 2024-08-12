@@ -1,0 +1,56 @@
+<style>
+	#username-display {
+            color: blue; 
+            font-weight: bold;
+        }
+
+        
+        #logout-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f0f0f0; 
+            border: 2px solid #ccc; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: #ddd; 
+        }
+</style>
+<dic class="header">
+    <h1>Adopt A-Cat/Dog</h1>
+    <a href="/" id="logo-link">
+        <img src="/images/logo.png" width="100" height="80" alt="Cat logo">
+    </a>
+    <div id="date-time"></div>
+	
+	  <% if (username) { %>
+            <p>Logged in as: <%= username %></p>
+           
+            <form action="/logout" method="GET" style="color:black">
+                <button type="submit">Logout</button>
+            </form>
+        <% } %>
+</div>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        });
+        document.getElementById('date-time').innerHTML = formattedTime;
+    }
+
+    window.onload = function() {
+        updateTime();
+        setInterval(updateTime, 1000);
+    };
+</script>
