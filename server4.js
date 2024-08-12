@@ -11,7 +11,7 @@ const petsFilePath = './pets.json';
 
 // 设置视图引擎为 EJS 并指定视图文件夹路径
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // 确保路径正确
+app.set('views', __dirname);// 确保路径正确
 
 console.log('Views directory:', path.join(__dirname, 'views'));
 
