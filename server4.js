@@ -29,6 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     const { message, username } = req.query;
     const pets = getPets();
+	
+	console.log("Looking for view in:", path.join(__dirname, 'views', 'a3q8.ejs'));
+	
     res.render('a3q8', { message: message || null, username: username || null, pets: pets });
 });
 
