@@ -145,6 +145,9 @@ app.get('/have-pet', (req, res) => {
     res.render('have_pet', { username });
 });
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 const PORT = process.env.PORT || 8007;
 app.listen(PORT, () => {
