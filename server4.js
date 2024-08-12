@@ -16,7 +16,7 @@ app.set('views', __dirname);// 确保路径正确
 console.log('Views directory:', path.join(__dirname, 'views'));
 
 // 设置静态资源目录
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));  // 将当前目录设置为静态资源目录
 
 // 读取宠物信息的函数
 function getPets() {
